@@ -1,0 +1,16 @@
+[Unit]
+Description=my resume website app
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+EnvironmentFile=None
+Type=simple
+User=site
+WorkingDirectory=/usr/local/bin
+ExecStart=ExecStart=/usr/bin/java $JAVA_OPTS -jar $EXEC_JAR
+Restart-on=failure
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
